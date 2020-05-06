@@ -20,7 +20,16 @@ deploy:
   - 26500
   - 26501
   - 26502
-    
+
+volumes:
+  - claim : zeebe-data
+    mount: /appz/data
+    name: data
+    size: 5Gi
+    class: local-storage
+    mode: ReadWriteOnce
+
+
 monitor:
   notify: appzops@cloudbourne.co      
     
