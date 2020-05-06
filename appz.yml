@@ -29,7 +29,6 @@ volumes:
     class: local-storage
     mode: ReadWriteOnce
 
-
 monitor:
   notify: appzops@cloudbourne.co      
     
