@@ -1,0 +1,30 @@
+app:
+  name: Zeebe
+  code: ZEEBE 
+  notify: appzdev@cloudbourne.co
+    
+build:
+  version: 0.22
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: zeebe-0.22
+  image_name: alpha/zeebe
+    
+deploy:
+  context: alpha/DEV
+  replicas: 1
+  port:
+  - 9600
+  - 26500
+  - 26501
+  - 26502
+    
+monitor:
+  notify: appzops@cloudbourne.co      
+    
+properties:
+  ZEEBE_PARTITIONS_COUNT: 3
+  ZEEBE_CLUSTER_SIZE: 3
+  ZEEBE_REPLICATION_FACTOR: 3
+  revision : 11
