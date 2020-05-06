@@ -27,4 +27,4 @@ properties:
   ZEEBE_PARTITIONS_COUNT: 3
   ZEEBE_CLUSTER_SIZE: 3
   ZEEBE_REPLICATION_FACTOR: 3
-  revision : 13
+  revision : 14
