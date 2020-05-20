@@ -9,10 +9,10 @@ build:
   build_file: none
   output_files: output/*.zip
   image_template: zeebe-0.22
-  image_name: alpha/zeebe
+  image_name: ea-shareservices/zeebe
     
 deploy:
-  context: alpha/DEV
+  context: EA-SharedServices/DEV
   type:  statefulset
   replicas: 3
   port:
@@ -26,7 +26,7 @@ volumes:
     mount: /appz/data
     name: data
     size: 5Gi
-    class: local-storage
+    class: silver
     mode: ReadWriteOnce
 
 monitor:
@@ -36,4 +36,4 @@ properties:
   ZEEBE_PARTITIONS_COUNT: 3
   ZEEBE_CLUSTER_SIZE: 3
   ZEEBE_REPLICATION_FACTOR: 3
-  revision : 16
+  revision : 24
