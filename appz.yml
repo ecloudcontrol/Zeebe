@@ -26,7 +26,7 @@ volumes:
     mount: /appz/data
     name: data
     size: 5Gi
-    class: silver
+    class: microk8s-hostpath
     mode: ReadWriteOnce
 
 monitor:
